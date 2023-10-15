@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  flex-direction: row;
+  font-family: sans-serif;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 30px;
+  width: 40%;
+  height: 30%;
+}
+
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  float: left;
+  text-align: right;
+  margin-left: 10%;
+}
+
+.display {
+  position: relative;
+  color: white;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #333333;
+  border: 1px solid black;
+  font-size: 2em;
+  border-radius: 25px;
+}
+
+.btn-area {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    ". . . ."
+    ". . . ."
+    ". . . ."
+    ". . . equal"
+    "zero zero . equal";
+}
+
+.equal {
+  grid-area: equal;
+}
+
+.zero {
+  grid-area: zero;
+}
+
+button {
+  position: static;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 1rem;
+  background: -webkit-linear-gradient(top, #ddd, #d2d2d2);
+  cursor: pointer;
+  margin: 2px;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  font-weight: bold;
+}
+
+button:active {
+  background: -webkit-linear-gradient(top, #d2d2d2, #ddd);
+}
+
+.operator,
+.equal {
+  background: rgb(20, 158, 238);
+}
+
+.history {
+  width: 40%;
+  margin: 30px auto 0 auto;
+  overflow: hidden;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 16px;
+}
+
+th {
+  border: 1px solid #ddd;
+  background-color: rgb(42, 196, 243);
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #d2d2d2;
+}
+
+@media screen and (max-width: 513px) {
+  .display,
+  .btn-area,
+  .history,
+  .flex-container-column,
+  .card {
+    position: static;
+    float: none;
+    max-width: none;
+  }
+
+  body {
+    display: contents;
+    flex-direction: column;
+  }
+
+  .button {
+    padding: 10px;
+  }
+
+  .flex-container-column {
+    margin: 5% auto;
+  }
+
+  .history {
+    overflow: auto;
+  }
+
+  .history,
+  .card {
+    width: 90vw;
+  }
+
+  table {
+    width: fit-content;
+  }
+}
